@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for this module.
+ */
+
+use Drupal\Core\Hook\Attribute\LegacyHook;
+use Drupal\domain\DomainInterface;
+use Drupal\domain_config_test\Hook\DomainConfigTestHooks;
+
+/**
+ * Implements hook_domain_request_alter().
+ */
+#[LegacyHook]
+function domain_config_test_domain_request_alter(DomainInterface $domain) {
+  \Drupal::service(DomainConfigTestHooks::class)->domainRequestAlter($domain);
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+#[LegacyHook]
+function domain_config_test_library_info_alter(array &$libraries, string $extension) {
+  \Drupal::service(DomainConfigTestHooks::class)->libraryInfoAlter($libraries, $extension);
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+#[LegacyHook]
+function domain_config_test_page_attachments_alter(array &$attachments) {
+  \Drupal::service(DomainConfigTestHooks::class)->pageAttachmentsAlter($attachments);
+}

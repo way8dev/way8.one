@@ -1,0 +1,23 @@
+dboptimize:
+  version: 1.x
+  js:
+    js/dboptimize.js: {}
+  css:
+    theme:
+      css/dboptimize.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - core/drupal.tableselect
+    - core/drupal.tablesort
+
+settings_buttons:
+  version: 1.x
+  js:
+    js/settings-buttons.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.form
+    - core/once

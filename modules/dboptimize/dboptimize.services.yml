@@ -1,0 +1,32 @@
+services:
+  dboptimize.cron.optimize:
+    class: Drupal\dboptimize\Cron\DbOptimizeCron
+    arguments: ['@config.factory', '@state', '@database', '@logger.channel.dboptimize']
+    tags:
+      - { name: cron }
+    public: true
+
+  dboptimize.cron.analyze:
+    class: Drupal\dboptimize\Cron\DbAnalyzeCron
+    arguments: ['@config.factory', '@state', '@database', '@logger.channel.dboptimize']
+    tags:
+      - { name: cron }
+    public: true
+
+  dboptimize.cron.repair:
+    class: Drupal\dboptimize\Cron\DbRepairCron
+    arguments: ['@config.factory', '@state', '@database', '@logger.channel.dboptimize']
+    tags:
+      - { name: cron }
+    public: true
+
+  dboptimize.cron.check:
+    class: Drupal\dboptimize\Cron\DbCheckCron
+    arguments: ['@config.factory', '@state', '@database', '@logger.channel.dboptimize']
+    tags:
+      - { name: cron }
+    public: true
+
+  logger.channel.dboptimize:
+    class: Drupal\Core\Logger\LoggerChannel
+    arguments: ['dboptimize']

@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Dboptimize module hooks.
+ */
+
+/**
+ * Implements hook_cron().
+ *
+ * Schedules database optimization tasks based on configuration.
+ */
+function dboptimize_cron() {
+  $config = \Drupal::config('dboptimize.settings');
+  $execution = $config->get('execution_method') ?? 'cron';
+
+  $ops = [
+    'optimize' => 'cron_tables',
+    'analyze' => 'cron_tables_analyze',
+    'repair' => 'cron_tables_repair',
+    'check' => 'cron_tables_check',
+  ];
+
+  foreach ($ops as $op => $config_key) {
+    $enabled_key = "enabled_{$op}";
+    if (!$config->get($enabled_key)) {
+      continue;
+    }
+
+    try {
+      if ($execution === 'queue') {
+        $tables = $config->get($config_key) ?? [];
+
+        if (is_array($tables)) {
+          $tables = array_values(array_filter($tables));
+        }
+
+        $queue_name = "dboptimize_{$op}";
+        $queue = \Drupal::queue($queue_name);
+        $queue->createItem([
+          'op' => $op,
+          'tables' => $tables,
+        ]);
+        \Drupal::logger('dboptimize')->info('Enqueued @op job (method=queue). Tables: @count', [
+          '@op' => $op,
+          '@count' => count($tables),
+        ]);
+      }
+      else {
+        $service_name = "dboptimize.cron.{$op}";
+        if (\Drupal::hasService($service_name)) {
+          $service = \Drupal::service($service_name);
+          if (is_callable([$service, '__invoke'])) {
+            $service->__invoke();
+          }
+          elseif (is_callable([$service, 'run'])) {
+            $service->run();
+          }
+          else {
+            \Drupal::logger('dboptimize')->warning('Service @service for @op is not invokable.', [
+              '@service' => $service_name,
+              '@op' => $op,
+            ]);
+          }
+          \Drupal::logger('dboptimize')->info('Executed @op directly (method=cron).', [
+            '@op' => $op,
+          ]);
+        }
+        else {
+          \Drupal::logger('dboptimize')->warning('Service @service not found for @op; skipping.', [
+            '@service' => $service_name,
+            '@op' => $op,
+          ]);
+        }
+      }
+    }
+    catch (\Throwable $e) {
+      \Drupal::logger('dboptimize')->error('Error processing @op in hook_cron: @msg', [
+        '@op' => $op,
+        '@msg' => $e->getMessage(),
+      ]);
+    }
+  }
+}

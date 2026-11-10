@@ -1,0 +1,9 @@
+name: 'Testing config dependencies and optional configuration'
+type: module
+package: Testing
+# version: VERSION
+
+# Information added by Drupal.org packaging script on 2026-10-21
+version: '11.4.11'
+project: 'drupal'
+datestamp: 1792579365

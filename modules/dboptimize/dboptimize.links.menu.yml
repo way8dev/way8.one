@@ -1,0 +1,56 @@
+dboptimize.admin:
+  title: 'DB Optimize'
+  description: 'Optimize database tables.'
+  route_name: dboptimize.overview
+  parent: system.admin_config_system
+  weight: 100
+
+dboptimize.overview:
+  title: 'Overview'
+  route_name: dboptimize.overview
+  parent: dboptimize.admin
+  weight: 110
+
+dboptimize.optimize_form:
+  title: 'Optimize'
+  route_name: dboptimize.optimize_form
+  parent: dboptimize.admin
+  weight: 110
+
+dboptimize.analyze_form:
+  title: 'Analyze'
+  route_name: dboptimize.analyze_form
+  parent: dboptimize.admin
+  weight: 110
+
+dboptimize.repair_form:
+  title: 'Repair'
+  route_name: dboptimize.repair_form
+  parent: dboptimize.admin
+  weight: 110
+
+dboptimize.Check_form:
+  title: 'Check'
+  route_name: dboptimize.Check_form
+  parent: dboptimize.admin
+  weight: 110
+
+dboptimize.backup_form:
+  title: 'Backup'
+  route_name: dboptimize.backup_form
+  parent: dboptimize.admin
+  weight: 110
+
+dboptimize.settings:
+  title: 'Settings'
+  description: 'Settings cron optimization.'
+  route_name: dboptimize.settings_form
+  parent: dboptimize.admin
+  weight: 110
+
+dboptimize.commands:
+  title: 'Help'
+  description: 'List of available Drush commands for dboptimize and usage examples.'
+  parent: dboptimize.admin
+  route_name: dboptimize.commands
+  weight: 100

@@ -1,0 +1,24 @@
+name: Way8
+type: theme
+# description: This is a fluffy sub theme of Stable 9.
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+base theme: false
+# Defines the base theme
+# base theme: stable9
+# Defines libraries group in which we can add CSS/JS.
+libraries:
+  - way8/global-styling
+# Regions
+regions:
+  highlighted: Highlighted
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  breadcrumb: Breadcrumb
+  banner: Banner
+  sidebar_first: 'First sidebar'
+  content: Content
+  sidebar_second: 'Second sidebar'
+  footer_top: 'Footer top'
+  footer: Footer
+  help: Help

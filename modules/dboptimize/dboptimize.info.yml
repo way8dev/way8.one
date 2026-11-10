@@ -1,0 +1,11 @@
+name: 'DB Optimize'
+type: module
+description: 'Optimize database tables via admin interface.'
+core_version_requirement: ^9 || ^10 || ^11 || ^12
+configure: dboptimize.optimize_form
+package: 'System'
+
+# Information added by Drupal.org packaging script on 2026-07-04
+version: '1.2.2'
+project: 'dboptimize'
+datestamp: 1783133107

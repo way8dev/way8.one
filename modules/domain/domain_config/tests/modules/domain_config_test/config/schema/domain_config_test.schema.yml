@@ -1,0 +1,11 @@
+# Schema for the fixture used in DomainConfigLibraryDiscoveryTest.
+domain_config_test.typed:
+  type: config_object
+  label: 'Typed test config'
+  mapping:
+    flag:
+      type: boolean
+      label: 'A boolean flag'
+    name:
+      type: string
+      label: 'A name'

@@ -1,0 +1,26 @@
+# Configuration file for PHPStan static code checking, see https://phpstan.org.
+includes:
+  - phpstan-baseline.neon
+  - phar://phpstan.phar/conf/bleedingEdge.neon
+  - entity_mapping.neon
+
+parameters:
+  level: 2
+  scanDirectories:
+    - ../../../../vendor/drush/drush/src-symfony-compatibility
+  reportUnmatchedIgnoredErrors: false
+  paths:
+    - .
+  ignoreErrors:
+    # new static() is a best practice in Drupal, so we cannot fix that.
+    - "#^Unsafe usage of new static#"
+    # The entity-storage refactor is a BC break; it lands in 4.0.0 (#3612201).
+    # On this maintenance branch the rules are suppressed instead.
+    - identifier: drupal.entityStoragePropertyAssignment
+    - identifier: drupal.entityStorageDirectInjection
+    # Deprecated core APIs whose replacements were only added in Drupal 11.4;
+    # they cannot be swapped while the module still supports ^10.2 || ^11.
+    - "#Call to deprecated function field_purge_batch\\(\\)#"
+    - "#Call to deprecated function user_pass_rehash\\(\\)#"
+    - "#Call to deprecated function node_access_rebuild\\(\\)#"
+    - "#deprecated trait .*ExpectDeprecationTrait#"

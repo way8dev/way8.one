@@ -1,0 +1,33 @@
+<header class="header" role="banner">
+<div class="header-block">
+<div class="header-topmenu-block">
+<div class="header-topmenu-block-inner">
+{{ page.highlighted }}
+</div>
+</div>
+<div class="header-main-block">
+{{ page.header }}
+{{ page.primary_menu }}
+</div>
+</div>
+</header>
+<main class="main" role="main">
+{{ page.secondary_menu }}
+{{ page.breadcrumb }}
+{{ page.help }}
+{{ page.content }}
+{% if page.sidebar_first %}
+<aside class="layout-sidebar-first" role="complementary">
+{{ page.sidebar_first }}
+</aside>
+{% endif %}
+{% if page.sidebar_second %}
+<aside class="layout-sidebar-second" role="complementary">
+{{ page.sidebar_second }}
+</aside>
+{% endif %}
+</main>
+<footer class="footer" role="contentinfo">
+{{ page.footer_top }}
+{{ page.footer }}
+</footer>

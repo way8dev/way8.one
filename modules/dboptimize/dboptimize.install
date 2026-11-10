@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the dboptimize module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function dboptimize_install() {
+  \Drupal::configFactory()->getEditable('dboptimize.settings')
+  // Default to daily (86400 seconds).
+    ->set('cron_frequency', 86400)
+    ->set('cron_frequency_analyze', 86400)
+    ->set('cron_frequency_repair', 86400)
+    ->set('cron_frequency_check', 86400)
+    ->save();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function dboptimize_uninstall() {
+  \Drupal::configFactory()->getEditable('dboptimize.settings')->delete();
+}
+
+/**
+ * Added new configuration settings to the cron frequency.
+ */
+function dboptimize_update_9001() {
+  $config = \Drupal::configFactory()->getEditable('dboptimize.settings');
+  $config
+    ->set('cron_frequency_analyze', 86400)
+    ->set('cron_frequency_repair', 86400)
+    ->set('cron_frequency_check', 86400)
+    ->save();
+}
+
+/**
+ * Ensure execution_method config exists; default to 'cron' for existing sites.
+ */
+function dboptimize_update_9002() {
+  $config = \Drupal::configFactory()->getEditable('dboptimize.settings');
+
+  if ($config->get('execution_method') === NULL) {
+    $config->set('execution_method', 'cron')->save();
+    \Drupal::logger('dboptimize')->info('dboptimize: initialized execution_method to "cron".');
+  }
+
+  return t('Initialized execution_method to "cron" for dboptimize.');
+}

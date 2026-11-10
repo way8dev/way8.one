@@ -1,0 +1,20 @@
+{
+  "name": "drupal/dboptimize",
+  "description": "DbOptimize is a simple utility module for optimizing database tables in Drupal through the UI or Cron.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Cristiano de Mari",
+      "email": "cristianodemari@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/dboptimize",
+    "source": "https://git.drupalcode.org/project/dboptimize"
+  },
+  "require": {
+    "drupal/core": "^9 || ^10 || ^11"
+  }
+}

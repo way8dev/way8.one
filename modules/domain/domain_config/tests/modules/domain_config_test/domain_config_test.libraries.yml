@@ -1,0 +1,6 @@
+# Library whose version is set from per-domain configuration by
+# DomainConfigTestHooks::libraryInfoAlter().
+domain_probe:
+  version: 'base'
+  dependencies:
+    - core/drupal

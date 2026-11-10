@@ -1,0 +1,733 @@
+
+/* Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, h5, h6, p,
+figure, blockquote, dl, dd, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4, h5, h6,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4,
+h5, h6 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font: inherit;
+}
+
+/* Make sure textarea without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/* Common */
+
+html {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+}
+
+a {
+    color: #000;
+    transition: all 0.3s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    padding: 0 0 20px 0;
+}
+
+h1 {
+    font-size: 27px;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+p {
+    padding: 0 0 20px 0;
+}
+
+strong {
+    font-weight: 500;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+hr {
+    display: block;
+    margin: 0 0 20px 0;
+    padding: 0;
+    height: 0;
+    border: none;
+    border-top: 1px solid #cacaca;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 501;
+}
+
+.footer {
+    width: 100%;
+    padding: 15px 0;
+}
+
+.main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0 20px 0;
+}
+
+.node-content {
+    padding: 0 0 15px 0;
+}
+
+/* Header */
+
+.header-block {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.header-topmenu-block {
+    background: #000;
+}
+
+.header-topmenu-block-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-topmenu-block nav ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.header-topmenu-block nav ul li a {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #e1e1e1;
+    transition: all 0.3s;
+}
+
+.header-topmenu-block nav ul li a.active {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.header-topmenu-block nav ul li a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.header-main-block {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.site-name {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 40px;
+    font-weight: 350;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.header-main-block nav ul {
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 53px;
+}
+
+.header-main-block nav ul li a {
+    text-decoration: none;
+}
+
+.header-main-block nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#block-way8-language .links li {
+    display: inline-block;
+}
+
+#block-way8-language .links li a {
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#block-way8-language .links li a:hover {
+    text-decoration: underline;
+}
+
+/* Breadcrumps */
+
+#block-way8-breadcrumbs {
+    padding: 0 0 20px 0;
+}
+
+#block-way8-breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+#block-way8-breadcrumbs ol li a {
+    display: inline-block;
+}
+
+#block-way8-breadcrumbs ol li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 5px 0 2px;
+    content: '/';
+}
+
+/* Main */
+
+/* Main / blocks */
+
+.block-item {
+    padding: 20px;
+    width: calc(1 / 3 * 100% - (1 - 1 / 3) * 30px);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.7s;
+}
+
+.block-item:hover {
+    border: 1px solid #9d9d9d;
+    transition: all 0.7s;
+}
+
+.block-item h3 {
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+.block-item p {
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.block-item a {
+    display: block;
+}
+
+/* Banners */
+
+.banner-studio-1 {
+    height: 250px;
+    margin: 0 0 30px 0;
+    padding: 35px 40px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .45)), url(/themes/way8/i/studio-background.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat-y;
+    color: #fff;
+}
+
+.banner-studio-1 .title-1 {
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.banner-studio-1 .title-2 {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0 0 0 2px;
+}
+
+.banner-studio-2 {
+    padding: 35px 40px;
+    color: #fff;
+    background: #000000;
+    background: linear-gradient(to right, #000000 0%, #292929 100%);
+}
+
+.banner-studio-2 .title-1 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.banner-studio-2 .title-2 {
+    font-size: 16px;
+    font-weight: 300;
+    color: #dedede;
+}
+
+/* Footer */
+
+.footer {
+    border-top: 1px solid #e7e7e7;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-top {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.footer-top-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-contacts-title {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 0 10px 0;
+}
+
+.footer-contacts {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-copyright {
+    font-size: 14px;
+    text-align: center;
+    padding: 15px;
+}
+
+/*** Way8 frontpage ***/
+
+.frontpage {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #000;
+    color: #fff;
+}
+
+.frontpage h1 {
+    font-family: "Lexend Deca", Sans-Serif;
+    font-size: 110px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    margin: 0;
+    padding: 0 0 25px 0;
+    text-align: center;
+}
+
+.frontpage-menu {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666;
+}
+
+.frontpage-menu li {
+    margin: 0;
+}
+
+.frontpage-menu-2 {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666;
+}
+
+.frontpage a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.frontpage a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.frontpage-description {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+/*** Way8 Studio ***/
+
+.block-projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0 0 30px 0;
+}
+
+.block-services {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 0 30px 0;
+}
+
+.block-projects .block-item {
+    padding: 0 !important;
+    width: calc(1 / 4 * 100% - (1 - 1 / 4) * 20px);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.7s;
+}
+
+.block-projects .block-item:hover {
+    border: 1px solid #9d9d9d;
+    transition: all 0.7s;
+}
+
+.block-projects-more-text {
+    padding: 0 0 15px 0;
+}
+
+.block-projects-more {
+    margin: 0 0 10px 0;
+    padding: 0 0 0 20px;
+}
+
+.block-services-text {
+    padding: 0 0 15px 0;
+    font-size: 14px;
+}
+
+.block-services-price {
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.page-studio {
+    width: 70%;
+}
+
+/* Messages */
+
+.messages__wrapper {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.messages {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dfdfdf;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+div[data-drupal-messages] {
+    margin: 20px 0;
+    padding: 5px 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Admin */
+
+.contextual-links {
+    display: none !important;
+}
+
+.contextual.open .contextual-links {
+    display: block !important;
+}
+
+/* Mobile */
+
+@media (max-width: 1200px) {
+    .header-topmenu-block-inner,
+    .header-main-block,
+    .main,
+    .footer-top-inner {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    h2 {
+        font-size: 23px;
+    }
+    
+    .header-topmenu-block nav ul {
+        justify-content: center;    
+    }
+    
+    .header-topmenu-block nav ul li a,
+    .header-topmenu-block nav ul li a.active,
+    #block-way8-language .links li a {
+        font-size: 16px;
+    }
+    
+    .header-main-block {
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    #block-way8-site-branding {
+        text-align: center;
+        margin: 0 0 3px 0;
+    }
+    
+    .site-name {
+        font-size: 42px;
+    }
+    
+    .header-main-block nav ul {
+        gap: 10px;
+        justify-content: center;
+        margin: 0;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    
+    #block-way8-main-menu {
+        padding: 10px 0 0 0;
+    }
+    
+    #block-way8-breadcrumbs ol {
+        font-size: 14px;
+    }
+    
+    .node-content {
+        font-size: 16px;
+    }
+    
+    .frontpage-way8-dev h2 {
+        padding: 0 0 25px 0;
+    }
+    
+    .footer-contacts {
+        font-size: 15px;
+    }
+    
+    /* Banners */
+    
+    .banner-studio-1 {
+        height: 160px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    
+    .banner-studio-1 .title-1 {
+        text-align: center;
+        font-size: 37px;
+    }
+    
+    .banner-studio-1 .title-2 {
+        padding: 0;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .banner-studio-2 {
+        padding: 20px 25px;
+        border-radius: 4px;
+    }
+    
+    .banner-studio-2 .title-1 {
+        padding: 0 0 15px 0;
+        font-size: 22px;
+    }
+    
+    .banner-studio-2 .title-2 {
+        padding: 0 0 10px 0;
+        font-size: 17px;
+    }
+    
+    /*** Way8 Dev ***/
+    
+    .frontpage-way8-dev h2 {
+        text-align: center;
+    }
+    
+    .block-item {
+        width: 100%;
+    }
+    
+    .block-projects .block-item {
+        width: calc(1 / 2 * 100% - (1 - 1 / 2) * 20px);
+    }
+    
+    .page-studio {
+        width: 100%;
+    }
+    
+    .block-services-text {
+        font-size: 15px;
+    }
+    
+    .block-services-price {
+        font-size: 15px;
+    }
+}
+
+/* Admin */
+
+.js-form-item {
+    display: block;
+}
+
+.user-login-form label {
+    display: block;
+    margin: 0 0 5px 0;
+}
+
+.user-login-form input {
+    display: block;
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+
+.form-submit:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,47 @@
+dboptimize.optimize_form_tab:
+  route_name: dboptimize.optimize_form
+  title: 'Optimize'
+  base_route: dboptimize.optimize_form
+  weight: 0
+
+dboptimize.check_tab:
+  route_name: dboptimize.check_form
+  title: 'Check'
+  base_route: dboptimize.optimize_form
+  weight: 0
+
+dboptimize.analyze_tab:
+  route_name: dboptimize.analyze_form
+  title: 'Analyze'
+  base_route: dboptimize.optimize_form
+  weight: 1
+
+dboptimize.repair_tab:
+  route_name: dboptimize.repair_form
+  title: 'Repair'
+  base_route: dboptimize.optimize_form
+  weight: 2
+
+dboptimize.backup_tab:
+  route_name: dboptimize.backup_form
+  title: 'Backup'
+  base_route: dboptimize.optimize_form
+  weight: 4
+
+dboptimize.settings_form_tab:
+  route_name: dboptimize.settings_form
+  title: 'Settings'
+  base_route: dboptimize.optimize_form
+  weight: 10
+
+dboptimize.overview_tab:
+  route_name: dboptimize.overview
+  base_route: dboptimize.optimize_form
+  title: 'Overview'
+  weight: -10
+
+dboptimize.commands_tab:
+  route_name: dboptimize.commands
+  title: 'Help'
+  base_route: dboptimize.optimize_form
+  weight: 100

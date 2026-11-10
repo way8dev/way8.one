@@ -1,0 +1,103 @@
+dboptimize.optimize_form:
+  path: '/admin/config/system/dboptimize/optimize'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeForm'
+    _title: 'Optimize Database Tables'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.confirm:
+  path: '/admin/config/system/dboptimize/optimize/confirm'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeConfirmForm'
+    _title: 'Confirm Optimization'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.settings_form:
+  path: '/admin/config/system/dboptimize/settings'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeSettingsForm'
+    _title: 'DB Optimize settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.check_form:
+  path: '/admin/config/system/dboptimize/check'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeCheckForm'
+    _title: 'Check Database Tables'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.analyze_form:
+  path: '/admin/config/system/dboptimize/analyze'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeAnalyzeForm'
+    _title: 'Analyze Database Tables'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.repair_form:
+  path: '/admin/config/system/dboptimize/repair'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeRepairForm'
+    _title: 'Repair Database Tables'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.check_confirm:
+  path: '/admin/config/system/dboptimize/check/confirm'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeDbCheckConfirmForm'
+    _title: 'Confirm Check'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.analyze_confirm:
+  path: '/admin/config/system/dboptimize/analyze/confirm'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeDbAnalyzeConfirmForm'
+    _title: 'Confirm Analyze'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.repair_confirm:
+  path: '/admin/config/system/dboptimize/repair/confirm'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeDbRepairConfirmForm'
+    _title: 'Confirm Repair'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.results:
+  path: '/admin/config/system/dboptimize/results'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeResultsForm'
+    _title: 'Database Operation Results'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.backup_form:
+  path: '/admin/config/system/dboptimize/backup'
+  defaults:
+    _form: '\Drupal\dboptimize\Form\DbOptimizeDbBackupForm'
+    _title: 'Database Backup'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.overview:
+  path: '/admin/config/system/dboptimize/overview'
+  defaults:
+    _controller: '\Drupal\dboptimize\Controller\DbOptimizeOverviewController::overview'
+    _title: 'Database Overview'
+  requirements:
+    _permission: 'administer site configuration'
+
+dboptimize.commands:
+  path: '/admin/config/system/dboptimize/help'
+  defaults:
+    _controller: '\Drupal\dboptimize\Controller\CommandsInfoController::overview'
+    _title: 'DbOptimize Drush commands'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,12 @@
+name: Link
+type: module
+description: 'Provides a field type for internal and external URLs.'
+package: Field types
+# version: VERSION
+dependencies:
+  - drupal:field
+
+# Information added by Drupal.org packaging script on 2026-10-21
+version: '11.4.11'
+project: 'drupal'
+datestamp: 1792579366

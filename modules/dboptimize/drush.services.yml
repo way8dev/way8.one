@@ -1,0 +1,11 @@
+services:
+  dboptimize.optimize.command:
+    class: Drupal\dboptimize\Commands\DbOptimizeCommands
+    arguments: ['@module_handler', '@database']
+    tags:
+      - { name: drush.command }
+  dboptimize.optimize.cron:
+    class: Drupal\dboptimize\Commands\DbOptimizeDrushCommands
+    arguments: ['@service_container', '@state', '@logger.channel.dboptimize']
+    tags:
+      - { name: drush.command }
