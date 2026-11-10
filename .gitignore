@@ -46,3 +46,6 @@ sites/simpletest
 # Ignore multi-site test environment.
 # simpletest
 /.ddev
+
+/.gigaide
+/.idea
